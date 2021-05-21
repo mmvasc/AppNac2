@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Intentions</title>
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/webjars/bootstrap/css/bootstraptheme.min.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <div class="w-auto p-3 mt-3 logo-container"></div>
+    <div>
+        <h1 class="display-6">Informações Cliente</h1>
+    </div>
+    <form method="POST" th:object="${intent}"  th:action="@{/save-intent}">
+
+        <div class="form-row">
+            <div><input type="hidden"  th:field="*{id}"></div>
+
+            <div class="form-group col-md-7 mt-3">
+                <label for="name">Nome:</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" placeholder="Seu nome" th:field="*{name}">
+                <div th:errors="*{name}" class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group row-cols-3 mt-3">
+                <label for="adress">Endereço:</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" placeholder="Seu Endereço" th:field="*{adress}">
+                <div th:errors="*{adress}" class="invalid-feedback"></div>
+            </div>
+
+
+            <div class="form-group row-cols-3 mt-3">
+                <label for="socialNumber">Cpf:</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" placeholder="Numero do CPF" th:field="*{socialNumber}">
+                <div th:errors="*{socialNumber}" class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group row-cols-1 mt-3">
+                <label for="generalNumber">RG:</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" placeholder="Numero do RG" th:field="*{generalNumber}">
+                <div th:errors="*{generalNumber}" class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group row-cols-1 mt-3">
+                <label for="birthDate">Data de nascimento:</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" placeholder="Data de nascimento" th:field="*{birthDate}">
+                <div th:errors="*{birthDate}" class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group row-cols-1 mt-3">
+                <label for="category">Tipo de financiamento:</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" placeholder="Tipo de financiamento" th:field="*{category}">
+                <div th:errors="*{birthDate}" class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group row-cols-1 mt-3">
+                <label for="quantity">Quantidade de parcelamento:</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" placeholder="Quantidade de parcelas" th:field="*{quantity}">
+                <div th:errors="*{quantity}" class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group row-cols-md-4">
+                <label for="valueIntention">Valor intencional:</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" placeholder="Intenção de financiamento" th:field="*{intentValue}">
+                <div th:errors="*{intentValue}" class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group row-cols-md-4">
+                <label for="cep">CEP:</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" placeholder="CEP" th:field="*{cep}">
+                <div th:errors="*{cep}" class="invalid-feedback"></div>
+            </div>
+
+
+            <div class="form-group row-cols-1 mt-3">
+                <label for="state">Estado:</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" placeholder="Estado" th:field="*{state}">
+                <div th:errors="*{state}" class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group row-cols-1 mt-3">
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" placeholder="Email" th:field="*{email}">
+                <div th:errors="*{email}" class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group row-cols-1 mt-3">
+                <label for="city">Cidade:</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" placeholder="Cidade" th:field="*{city}">
+                <div th:errors="*{city}" class="invalid-feedback"></div>
+            </div>
+
+
+
+            <div class="form-group row-cols-1 mt-3">
+                <label for="salary">Salario:</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" placeholder="Informe seu Salario" th:field="*{salary}">
+                <div th:errors="*{salary}" class="invalid-feedback"></div>
+            </div>
+
+
+<!--            <div class="form-group mt-3">-->
+<!--                <label for="exampleFormControlTextarea1">Descrição</label>-->
+<!--                <textarea class="form-control" th:field="*{category}" rows="3"></textarea>-->
+<!--            </div>-->
+
+
+<!--            <div class="form-group col-md-2 mt-3">-->
+<!--                <label for="nome">Quantidade parcelamento:</label>-->
+<!--                <input type="number" class="form-control" th:errorclass="is-invalid" placeholder="Quantidade parcelamento" th:field="*{quantity}">-->
+<!--                <div th:errors="*{quantity}" class="invalid-feedback"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+        <div>
+            <button type="submit" class="btn btn-success  mt-3">Salvar</button>
+        </div>
+    </form>
+</div>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
